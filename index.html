@@ -225,7 +225,7 @@
         }
 
         .card p, .card li {
-            font-size: 15px; /* Slightly larger for readability with less text */
+            font-size: 15px;
             line-height: 1.5;
             color: var(--text-main);
             margin-bottom: 12px;
@@ -355,20 +355,20 @@
             <div class="grid-3-col">
                 <div class="card">
                     <h4>The Concept</h4>
-                    <p>An AI-powered, culturally localized cognitive maintenance platform for elderly dementia patients in the North Eastern Region.</p>
-                    <p>It utilizes regional motifs (like Assam tea gardens) and native voice guidance for offline digital therapy.</p>
+                    <p>An AI-powered, culturally localized cognitive maintenance platform for elderly dementia patients in the NER.</p>
+                    <p>It utilizes regional motifs and native voice guidance for fully offline digital therapy.</p>
                 </div>
                 <div class="card">
                     <h4>Addressing the Problem</h4>
-                    <p>Standard apps use confusing Western icons. Smriti Setu relies on familiar, low-stress games to stimulate memory.</p>
-                    <p>It passively tracks reaction times, giving caregivers early warnings of cognitive decline without forced clinical tests.</p>
+                    <p>Standard apps rely on confusing Western concepts. Smriti Setu uses familiar, low-stress games to stimulate memory.</p>
+                    <p>It passively tracks reaction times, generating early warnings without forcing clinical tests.</p>
                 </div>
                 <div class="card">
                     <h4>Innovation</h4>
                     <ul>
-                        <li><strong>No "Wrong" Answers:</strong> Adaptive games prevent patient anxiety.</li>
-                        <li><strong>100% Offline:</strong> Local storage (IndexedDB) with deferred batch-syncing.</li>
-                        <li><strong>Native Voice:</strong> Talks in local languages without internet APIs.</li>
+                        <li><strong>No "Wrong" Answers:</strong> Adaptive games eliminate anxiety triggers.</li>
+                        <li><strong>100% Offline:</strong> Local storage (IndexedDB) with deferred syncing.</li>
+                        <li><strong>Native Voice:</strong> Local language synthesis without cloud APIs.</li>
                     </ul>
                 </div>
             </div>
@@ -389,7 +389,7 @@
                     <ul>
                         <li><strong>Frontend:</strong> React / Vite + TypeScript.</li>
                         <li><strong>Styling:</strong> Tailwind CSS (high-contrast accessibility).</li>
-                        <li><strong>Voice/Audio:</strong> Native Web Audio API & Web Speech API.</li>
+                        <li><strong>Voice/Audio:</strong> Native Web Audio & Speech APIs.</li>
                         <li><strong>Storage:</strong> HTML5 LocalStorage / IndexedDB.</li>
                     </ul>
                 </div>
@@ -403,12 +403,12 @@
                         <div class="flow-arrow">▼</div>
                         <div class="flow-step">
                             <strong>2. Telemetry Engine</strong>
-                            <span>Tracks micro-latencies implicitly</span>
+                            <span>Implicitly tracks micro-latencies</span>
                         </div>
                         <div class="flow-arrow">▼</div>
                         <div class="flow-step">
                             <strong>3. Offline Storage</strong>
-                            <span>Logged locally in encrypted IndexedDB</span>
+                            <span>Logged to encrypted IndexedDB</span>
                         </div>
                         <div class="flow-arrow">▼</div>
                         <div class="flow-step">
@@ -435,7 +435,7 @@
             <div style="display: flex; flex-direction: column; gap: 20px;">
                 <div class="card" style="padding: 15px;">
                     <h4>Analysis of Feasibility</h4>
-                    <p>Smriti Setu is optimized for low-cost, subsidized Android tablets (1GB RAM). Relying exclusively on native browser APIs eliminates recurring cloud costs, ensuring economic sustainability for rural healthcare initiatives.</p>
+                    <p>Optimized for low-cost Android tablets (1GB RAM). Running purely on native browser APIs eliminates recurring cloud costs, ensuring high economic sustainability for rural healthcare deployments.</p>
                 </div>
                 <table>
                     <thead>
@@ -446,16 +446,16 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Erratic 2G/Cellular Connectivity:</strong> Poor network in hilly terrains.</td>
-                            <td>Offline Engine batches data locally (IndexedDB), syncing only when stable connection is caught.</td>
+                            <td><strong>Erratic Connectivity:</strong> Poor network in hilly terrains.</td>
+                            <td>Offline Engine batches data locally, syncing only when a connection is caught.</td>
                         </tr>
                         <tr>
-                            <td><strong>Low Tech-Literacy:</strong> Difficulties navigating standard smartphone UIs.</td>
-                            <td>Single-tap routine check-cards and local voice guidance replace complex menus.</td>
+                            <td><strong>Low Tech-Literacy:</strong> Poor smartphone navigation skills.</td>
+                            <td>Single-tap cards and local voice guidance replace complex menus.</td>
                         </tr>
                         <tr>
-                            <td><strong>Differentiating Decline:</strong> Hard to separate bad days from neurological drop.</td>
-                            <td>"Sundowning Alerts" cross-reference daily latency trends to flag distinct clinical anomalies.</td>
+                            <td><strong>Differentiating Decline:</strong> Separating bad days from decay.</td>
+                            <td>"Sundowning Alerts" cross-reference daily latency trends to flag anomalies.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -474,18 +474,18 @@
             <div class="grid-3-col">
                 <div class="card">
                     <h4>Elderly Patients</h4>
-                    <p><strong>Impact:</strong> Reduces cognitive distress and cultural alienation.</p>
-                    <p><strong>Benefits:</strong> Delivers a zero-frustration interface with soothing audio that stimulates neuroplasticity. Restores dignity via familiar regional contexts.</p>
+                    <p><strong>Impact:</strong> Reduces distress and cultural alienation.</p>
+                    <p><strong>Benefits:</strong> Delivers a zero-frustration interface. Soothing regional audio and visuals stimulate neuroplasticity while restoring dignity.</p>
                 </div>
                 <div class="card">
                     <h4>Family Caregivers</h4>
-                    <p><strong>Impact:</strong> Mitigates emotional strain and caregiving burnout.</p>
-                    <p><strong>Benefits:</strong> Automated routines and hydration tracking remove daily friction. Passive tracking yields objective stability data for peace of mind.</p>
+                    <p><strong>Impact:</strong> Mitigates caregiving burnout.</p>
+                    <p><strong>Benefits:</strong> Automated routines remove daily friction. Passive tracking yields objective stability data, providing essential peace of mind.</p>
                 </div>
                 <div class="card">
                     <h4>Public Health (ASHA)</h4>
-                    <p><strong>Impact:</strong> Bridges the specialized neurological care gap.</p>
-                    <p><strong>Benefits:</strong> Empowers community-level tracking under the Ayushman Bharat Digital Mission (ABDM) without requiring on-site geriatricians.</p>
+                    <p><strong>Impact:</strong> Bridges the neurological care gap.</p>
+                    <p><strong>Benefits:</strong> Empowers community-level tracking (ABDM compliant) without requiring on-site specialists or complex infrastructure.</p>
                 </div>
             </div>
         </div>
@@ -502,11 +502,11 @@
             <div class="card" style="flex-grow: 1;">
                 <h4>Clinical Frameworks & Validations</h4>
                 <ul style="margin-top: 10px;">
-                    <li style="margin-bottom: 15px;"><strong>MoCA Framework:</strong> Cognitive tasks map directly to established Montreal Cognitive Assessment domains (Orientation, Delayed Recall, Visuospatial).</li>
-                    <li style="margin-bottom: 15px;"><strong>DPDPA 2023 Compliance:</strong> Strict alignment with India's Digital Personal Data Protection Act, utilizing proxy consent for legal guardians.</li>
-                    <li style="margin-bottom: 15px;"><strong>JMIR (2025):</strong> Research confirms Digital Therapeutics (DTx) with gamified, localized environments significantly improve engagement in MCI patients.</li>
-                    <li style="margin-bottom: 15px;"><strong>AI-Mind Principles:</strong> Adopting frameworks that leverage reaction-time micro-latencies for the early prediction of dementia risk.</li>
-                    <li><strong>DEMON Network:</strong> Informed by data science models prioritizing longitudinal, real-world data collection over isolated clinical exams.</li>
+                    <li style="margin-bottom: 15px;"><strong>MoCA Framework:</strong> Cognitive tasks map directly to established Montreal Cognitive Assessment domains.</li>
+                    <li style="margin-bottom: 15px;"><strong>DPDPA 2023 Compliance:</strong> Strict alignment with India's data laws, utilizing proxy consent for legal guardians.</li>
+                    <li style="margin-bottom: 15px;"><strong>JMIR (2025):</strong> Research confirms Digital Therapeutics (DTx) with localized environments significantly improve MCI engagement.</li>
+                    <li style="margin-bottom: 15px;"><strong>AI-Mind Principles:</strong> Leverages reaction-time micro-latencies for the early prediction of dementia risk.</li>
+                    <li><strong>DEMON Network:</strong> Prioritizes longitudinal, real-world data collection over isolated clinical exams.</li>
                 </ul>
             </div>
         </div>
