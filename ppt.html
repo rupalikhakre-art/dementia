@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti Setu - SIH 2026 Pitch Deck</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+        
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #000000;
+            --sih-blue: #1c4587; /* Matches the blue header text */
+            --oval-purple: #6b4c9a; /* Matches the team name oval */
+            --accent-teal: #0d9488;
+            --border-light: #e2e8f0;
+            --card-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .slide {
+            width: 1024px;
+            height: 576px; /* 16:9 aspect ratio */
+            background-color: var(--bg-color);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* --- TITLE SLIDE (SLIDE 1) SPECIFIC STYLES --- */
+        .slide-1 {
+            border-top: 3px solid #e8e8e8;
+        }
+
+        .title-slide-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px 0 40px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .title-slide-blue-text {
+            color: var(--sih-blue);
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            flex-grow: 1;
+            text-align: center;
+            padding-right: 20px;
+        }
+
+        .sih-logo-img {
+            height: 85px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .title-page-heading {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 25px;
+            margin-bottom: 30px;
+            z-index: 10;
+            letter-spacing: 1px;
+        }
+
+        .title-list {
+            list-style-type: disc;
+            padding-left: 60px;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 2.3;
+            z-index: 10;
+            width: 65%; /* Constrain to the left side */
+            position: relative;
+        }
+        
+        .title-list span {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        /* Recreating the exact background graphic from Slide 1 */
+        .slide-1-bg-graphic {
+            position: absolute;
+            right: 40px;
+            top: 130px;
+            width: 400px;
+            height: 420px;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-1-bg-hexagon {
+            position: absolute;
+            width: 320px;
+            height: 380px;
+            background-color: #efefef;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            z-index: 2;
+        }
+
+        .slide-1-bg-outline-1 {
+            position: absolute;
+            width: 140px;
+            height: 160px;
+            border: 6px solid #efefef;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            top: -40px;
+            left: -20px;
+            z-index: 1;
+        }
+
+        .slide-1-bg-outline-2 {
+            position: absolute;
+            width: 80px;
+            height: 90px;
+            background-color: #efefef;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            bottom: 40px;
+            left: -60px;
+            z-index: 1;
+        }
+
+        .slide-1-main-logo {
+            position: absolute;
+            width: 200px;
+            z-index: 3;
+            object-fit: contain;
+        }
+
+        /* --- CONTENT SLIDES (SLIDES 2-6) HEADER STYLES --- */
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px 10px 40px;
+            width: 100%;
+        }
+
+        .team-oval {
+            border: 2px solid var(--oval-purple);
+            border-radius: 50%;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.2;
+            min-width: 90px;
+        }
+
+        .content-title {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 38px;
+            font-weight: 700;
+            text-align: center;
+            flex-grow: 1;
+            text-transform: uppercase;
+        }
+
+        /* --- GENERAL CONTENT STYLES --- */
+        .slide-content {
+            flex-grow: 1;
+            padding: 20px 50px 40px 50px;
+            display: flex;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        /* Layout Grids */
+        .grid-3-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 25px;
+            flex-grow: 1;
+        }
+        
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-light);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 6px;
+        }
+
+        .card h4 {
+            color: var(--accent-teal);
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .card p, .card li {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid var(--border-light);
+            padding: 12px;
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background-color: var(--card-bg);
+            font-weight: 700;
+        }
+
+        .prototype-placeholder {
+            border: 2px dashed #94a3b8;
+            background-color: #f1f5f9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            flex-grow: 1;
+            min-height: 160px;
+        }
+
+        .prototype-placeholder p {
+            color: #64748b;
+            font-weight: 600;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        /* Print formatting */
+        @media print {
+            body { background: none; padding: 0; }
+            .slide { box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title Page -->
+    <div class="slide slide-1">
+        
+        <!-- Recreated Exact Background Graphic -->
+        <div class="slide-1-bg-graphic">
+            <div class="slide-1-bg-outline-1"></div>
+            <div class="slide-1-bg-outline-2"></div>
+            <div class="slide-1-bg-hexagon"></div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" class="slide-1-main-logo" alt="Large Logo">
+        </div>
+
+        <div class="title-slide-top-bar">
+            <div class="title-slide-blue-text">SMART INDIA HACKATHON 2026</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
+        </div>
+        
+        <div class="title-page-heading">TITLE PAGE</div>
+        
+        <div class="slide-content" style="padding-top: 0;">
+            <ul class="title-list">
+                <li>Problem Statement ID &ndash; <span>26003</span></li>
+                <li>Problem Statement Title- <span>AI-Based Cognitive Gaming and Memory Assistance Platform for Elderly Dementia Patients in NER</span></li>
+                <li>Theme- <span>Assistive HealthTech / AI-Driven Therapies</span></li>
+                <li>PS Category- <span>Software (Offline-First Architecture)</span></li>
+                <li>Team ID- <span>[Insert Team ID]</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 2: IDEA TITLE -->
+    <div class="slide">
+        <div class="content-header">
+            <div class="team-oval">Your<br>Team<br>Name</div>
+            <div class="content-title">IDEA TITLE</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
+        </div>
+        <div class="slide-content">
+            <h3 style="margin-bottom: 15px; font-size: 20px; font-weight: 700;">Proposed Solution: Smriti Setu ("The Memory Bridge")</h3>
+            <div class="grid-3-col">
+                <div class="card">
+                    <h4>The Concept</h4>
+                    <p>An AI-powered, culturally localized cognitive maintenance platform for elderly dementia patients in the North Eastern Region (NER).</p>
+                    <p>It replaces foreign interfaces with regional motifs (Assam tea gardens, Muga silk) and native language voice guidance, acting as a digital therapeutic tool that works fully offline.</p>
+                </div>
+                <div class="card">
+                    <h4>How it addresses the problem</h4>
+                    <p><strong>The Dementia Problem:</strong> Standard cognitive apps use Western icons that cause confusion and anxiety in NER elders. </p>
+                    <p><strong>Memory Games & Tracking:</strong> By playing familiar, low-stress games, patients stimulate their memory. Behind the scenes, the app passively tracks reaction times, giving caregivers early warnings without forced medical tests.</p>
+                </div>
+                <div class="card">
+                    <h4>Innovation & Uniqueness</h4>
+                    <ul>
+                        <li><strong>No "Wrong" Answers:</strong> Games adapt automatically. Instead of harsh buzzers, the correct answer glows gently to prevent patient anxiety.</li>
+                        <li><strong>Works Completely Offline:</strong> Runs on local storage (IndexedDB). ASHA workers can sync data later.</li>
+                        <li><strong>Built-in Voice Assistance:</strong> Talks to the elder in their local language—no internet required.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: TECHNICAL APPROACH -->
+    <div class="slide">
+        <div class="content-header">
+            <div class="team-oval">Your<br>Team<br>Name</div>
+            <div class="content-title">TECHNICAL APPROACH</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
+        </div>
+        <div class="slide-content">
+            <div class="grid-2-col">
+                <div class="card" style="padding: 15px;">
+                    <h4>Technologies to be used</h4>
+                    <ul>
+                        <li><strong>Frontend:</strong> React / Vite + TypeScript.</li>
+                        <li><strong>Styling:</strong> Tailwind CSS (high-contrast ivory palettes).</li>
+                        <li><strong>Voice/Audio:</strong> Native Web Audio API & Speech Synthesis API.</li>
+                        <li><strong>Local Data:</strong> HTML5 LocalStorage / IndexedDB.</li>
+                    </ul>
+                </div>
+                <div class="card" style="padding: 15px;">
+                    <h4>Methodology & Process Flow</h4>
+                    <p><strong>1. UI:</strong> Elder plays localized games via High-Contrast Launcher.</p>
+                    <p><strong>2. Telemetry:</strong> System tracks micro-latencies & hesitations.</p>
+                    <p><strong>3. Storage:</strong> Logged locally in IndexedDB (offline continuity).</p>
+                    <p><strong>4. Sync:</strong> Encrypted records batch-sync to clinic upon network detection.</p>
+                </div>
+            </div>
+            <!-- Space for Prototype / Flowchart -->
+            <div class="prototype-placeholder">
+                <p>[ Insert Architectural Flow Chart or App Prototype Screenshot Here ]</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: FEASIBILITY AND VIABILITY -->
+    <div class="slide">
+        <div class="content-header">
+            <div class="team-oval">Your<br>Team<br>Name</div>
+            <div class="content-title">FEASIBILITY AND VIABILITY</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
+        </div>
+        <div class="slide-content">
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="card" style="padding: 15px;">
+                    <h4>Analysis of Feasibility</h4>
+                    <p>Smriti Setu is highly viable for rural deployment. It is optimized for low-cost, subsidized Android tablets requiring only a minimum of 1GB RAM. The reliance on native browser APIs (Web Speech/Audio) eliminates recurring external API costs and server dependency, ensuring the project is economically sustainable for rural healthcare initiatives.</p>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Potential Challenges / Risks</th>
+                            <th>Strategies for Overcoming Challenges</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Erratic 2G/cellular connectivity in hilly terrains.</td>
+                            <td>Offline Synchronization Engine batches data locally via IndexedDB, syncing only when a connection is caught.</td>
+                        </tr>
+                        <tr>
+                            <td>Low tech-literacy among elderly demographics.</td>
+                            <td>Single-tap routine check-cards and voice guidance replace complex smartphone menus.</td>
+                        </tr>
+                        <tr>
+                            <td>Differentiating normal bad days from rapid decline.</td>
+                            <td>"Sundowning Alerts" cross-reference daily latency trends between specific hours to flag clinical anomalies.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: IMPACT AND BENEFITS -->
+    <div class="slide">
+        <div class="content-header">
+            <div class="team-oval">Your<br>Team<br>Name</div>
+            <div class="content-title">IMPACT AND BENEFITS</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
+        </div>
+        <div class="slide-content">
+            <div class="grid-3-col">
+                <div class="card">
+                    <h4>For the Elderly Patient</h4>
+                    <p><strong>Impact:</strong> Reduces cognitive distress and cultural alienation.</p>
+                    <p><strong>Benefits:</strong> Provides a zero-frustration interface with sensory-soothing audio that stimulates neuroplasticity. Promotes dignity by using familiar regional contexts.</p>
+                </div>
+                <div class="card">
+                    <h4>For the Family Caregiver</h4>
+                    <p><strong>Impact:</strong> Mitigates caregiver burnout and emotional strain.</p>
+                    <p><strong>Benefits:</strong> Automated daily orientation routines and hydration tracking remove daily friction. Passive monitoring provides objective stability indexes for peace of mind.</p>
+                </div>
+                <div class="card">
+                    <h4>For Public Health (ASHA / PHC)</h4>
+                    <p><strong>Impact:</strong> Bridges the specialized neurological care gap in the NER.</p>
+                    <p><strong>Benefits:</strong> Enables community-level geriatric tracking under the Ayushman Bharat Digital Mission (ABDM) and generates longitudinal data without requiring specialized geriatricians on-site.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: RESEARCH AND REFERENCES -->
+    <div class="slide">
+        <div class="content-header">
+            <div class="team-oval">Your<br>Team<br>Name</div>
+            <div class="content-title">RESEARCH AND REFERENCES</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
+        </div>
+        <div class="slide-content">
+            <div class="card" style="flex-grow: 1;">
+                <h4>Details / Links of the reference and research work</h4>
+                <ul>
+                    <li style="margin-bottom: 12px;"><strong>MoCA Standard Framework:</strong> Cognitive tasks map directly to standard MoCA domains (Orientation, Delayed Recall, Visuospatial Perception, and Sustained Attention).</li>
+                    <li style="margin-bottom: 12px;"><strong>DPDPA 2023 Compliance:</strong> Strict alignment with the Digital Personal Data Protection Act utilizing proxy consent flows for legal guardians.</li>
+                    <li style="margin-bottom: 12px;"><strong>Journal of Medical Internet Research (JMIR - 2025):</strong> Research validates that Digital Therapeutics (DTx) utilizing gamified, localized environments significantly improve engagement and reduce cognitive decline rates in MCI patients.</li>
+                    <li style="margin-bottom: 12px;"><strong>AI-Mind Research Principles:</strong> Adopting frameworks from ongoing AI-Mind initiatives that utilize digital telemetry and reaction-time micro-latencies for early prediction of dementia risk.</li>
+                    <li><strong>Deep Dementia Phenotyping (DEMON) Network:</strong> Informed by data science models that prioritize longitudinal, real-world data collection over isolated clinical assessments to track actual behavioral drifts.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
