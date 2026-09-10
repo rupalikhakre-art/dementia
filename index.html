@@ -289,23 +289,24 @@
             font-weight: 700;
         }
 
-        .prototype-placeholder {
-            border: 2px dashed #94a3b8;
-            background-color: #f1f5f9;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .prototype-image-container {
             margin-top: 20px;
             flex-grow: 1;
-            min-height: 140px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            background-color: var(--bg-color);
         }
 
-        .prototype-placeholder p {
-            color: #64748b;
-            font-weight: 600;
-            font-size: 16px;
-            margin: 0;
+        .prototype-image-container img {
+            width: 100%;
+            height: 100%;
+            max-height: 180px; 
+            object-fit: cover;
+            object-position: center top;
         }
 
         @media print {
@@ -337,7 +338,7 @@
                 <li>Problem Statement ID &ndash; <span>26003</span></li>
                 <li>Problem Statement Title &ndash; <span>AI-Based Cognitive Gaming and Memory Assistance Platform for Elderly Dementia Patients in NER</span></li>
                 <li>Theme &ndash; <span>Assistive HealthTech / AI-Driven Therapies</span></li>
-                <li>PS Category &ndash; <span>Software (Offline-First Architecture)</span></li>
+                <li>PS Category &ndash; <span>Software</span></li>
                 <li>Team Name &ndash; <span>Mnemos</span></li>
             </ul>
         </div>
@@ -418,8 +419,8 @@
                     </div>
                 </div>
             </div>
-            <div class="prototype-placeholder">
-                <p>[ Insert Architectural Flow Chart or App Prototype Screenshot Here ]</p>
+            <div class="prototype-image-container">
+                <img src="https://www.collidu.com/media/catalog/product/img/4/5/4525353131486612671d0e983fac8ac137d9ad4facff004c789e53b1d838b01e/dementia-slide1.png" alt="Dementia Prototype Illustration">
             </div>
         </div>
     </div>
