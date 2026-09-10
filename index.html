@@ -187,7 +187,7 @@
         /* --- GENERAL CONTENT STYLES --- */
         .slide-content {
             flex-grow: 1;
-            padding: 20px 50px 40px 50px;
+            padding: 15px 50px 30px 50px;
             display: flex;
             flex-direction: column;
             z-index: 2;
@@ -235,42 +235,34 @@
             padding-left: 20px;
         }
 
-        /* --- CSS FLOWCHART STYLES --- */
-        .flowchart {
+        /* --- CSS HORIZONTAL FLOWCHART STYLES --- */
+        .flowchart-horizontal {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
-            gap: 6px;
-            margin-top: 10px;
+            justify-content: space-between;
+            margin-top: 5px;
+            width: 100%;
         }
 
-        .flow-step {
+        .flow-step-h {
             background-color: var(--sih-blue);
             color: #ffffff;
-            padding: 10px 15px;
+            padding: 10px 8px;
             border-radius: 6px;
-            width: 100%;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .flow-step strong {
-            display: block;
-            font-size: 15px;
-            margin-bottom: 2px;
-            letter-spacing: 0.5px;
-        }
-
-        .flow-step span {
-            display: block;
+            flex: 1;
             font-size: 13px;
-            color: #cbd5e1;
+            font-weight: 600;
+            line-height: 1.3;
         }
 
-        .flow-arrow {
+        .flow-arrow-h {
             color: var(--accent-teal);
-            font-size: 18px;
-            line-height: 1;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 10px;
         }
 
         table {
@@ -290,7 +282,7 @@
         }
 
         .prototype-image-container {
-            margin-top: 20px;
+            margin-top: 15px;
             flex-grow: 1;
             display: flex;
             justify-content: center;
@@ -304,7 +296,7 @@
         .prototype-image-container img {
             width: 100%;
             height: 100%;
-            max-height: 180px; 
+            max-height: 250px; /* Increased to allow the image to take up more space */
             object-fit: cover;
             object-position: center top;
         }
@@ -338,7 +330,7 @@
                 <li>Problem Statement ID &ndash; <span>26003</span></li>
                 <li>Problem Statement Title &ndash; <span>AI-Based Cognitive Gaming and Memory Assistance Platform for Elderly Dementia Patients in NER</span></li>
                 <li>Theme &ndash; <span>Assistive HealthTech / AI-Driven Therapies</span></li>
-                <li>PS Category &ndash; <span>Software</span></li>
+                <li>PS Category &ndash; <span>Software (Offline-First Architecture)</span></li>
                 <li>Team Name &ndash; <span>Mnemos</span></li>
             </ul>
         </div>
@@ -376,7 +368,7 @@
         </div>
     </div>
 
-    <!-- Slide 3: TECHNICAL APPROACH -->
+    <!-- Slide 3: TECHNICAL APPROACH (Updated Concise Layout) -->
     <div class="slide">
         <div class="content-header">
             <div class="team-oval">Team<br>Mnemos</div>
@@ -384,43 +376,32 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYJArnWAoz8c--3E-VZqosGJMpSskX8FdAwqBLvgiltw&s" alt="SIH Logo" class="sih-logo-img">
         </div>
         <div class="slide-content">
-            <div class="grid-2-col">
-                <div class="card">
+            <div class="grid-2-col" style="margin-bottom: 10px;">
+                <div class="card" style="padding: 15px;">
                     <h4>Technologies Used</h4>
-                    <ul>
+                    <ul style="margin-bottom: 0;">
                         <li><strong>Frontend:</strong> React / Vite + TypeScript.</li>
-                        <li><strong>Styling:</strong> Tailwind CSS (high-contrast accessibility).</li>
+                        <li><strong>Styling:</strong> Tailwind CSS.</li>
                         <li><strong>Voice/Audio:</strong> Native Web Audio & Speech APIs.</li>
                         <li><strong>Storage:</strong> HTML5 LocalStorage / IndexedDB.</li>
                     </ul>
                 </div>
-                <div class="card">
+                <div class="card" style="padding: 15px;">
                     <h4>Process Flowchart</h4>
-                    <div class="flowchart">
-                        <div class="flow-step">
-                            <strong>1. Patient UI</strong>
-                            <span>Elder interacts via localized games</span>
-                        </div>
-                        <div class="flow-arrow">▼</div>
-                        <div class="flow-step">
-                            <strong>2. Telemetry Engine</strong>
-                            <span>Implicitly tracks micro-latencies</span>
-                        </div>
-                        <div class="flow-arrow">▼</div>
-                        <div class="flow-step">
-                            <strong>3. Offline Storage</strong>
-                            <span>Logged to encrypted IndexedDB</span>
-                        </div>
-                        <div class="flow-arrow">▼</div>
-                        <div class="flow-step">
-                            <strong>4. Clinic Sync</strong>
-                            <span>Batch-syncs upon network detection</span>
-                        </div>
+                    <div class="flowchart-horizontal">
+                        <div class="flow-step-h">1. Patient UI<br><span style="font-size: 11px; font-weight: 400; color:#cbd5e1;">Localized Games</span></div>
+                        <div class="flow-arrow-h">&#9654;</div>
+                        <div class="flow-step-h">2. Telemetry<br><span style="font-size: 11px; font-weight: 400; color:#cbd5e1;">Tracks Latency</span></div>
+                        <div class="flow-arrow-h">&#9654;</div>
+                        <div class="flow-step-h">3. Offline DB<br><span style="font-size: 11px; font-weight: 400; color:#cbd5e1;">IndexedDB Save</span></div>
+                        <div class="flow-arrow-h">&#9654;</div>
+                        <div class="flow-step-h">4. Sync<br><span style="font-size: 11px; font-weight: 400; color:#cbd5e1;">Batch to Clinic</span></div>
                     </div>
                 </div>
             </div>
+            
             <div class="prototype-image-container">
-                <img src="https://www.collidu.com/media/catalog/product/img/4/5/4525353131486612671d0e983fac8ac137d9ad4facff004c789e53b1d838b01e/dementia-slide1.png" alt="Dementia Prototype Illustration">
+                <img src="https://www.collidu.com/media/catalog/product/img/4/5/4525353131486612671d0e983fac8ac137d9ad4facff004c789e53b1d838b01e/dementia-slide1.png" alt="Stages of Dementia Illustration">
             </div>
         </div>
     </div>
